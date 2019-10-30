@@ -1,4 +1,5 @@
 export BIN_DIR=./bin
+export PROJ_PATH=github.com/asticode/go-astilectron-bundler
 
 ####################################################################################################################
 ##
@@ -15,15 +16,15 @@ help: ## This help.
 
 build: ## build astilectron-bundler into ./bin
 	@mkdir -p $(BIN_DIR)
-	go build -o $(BIN_DIR)/astilectron-bundler github.com/asticode/go-astilectron-bundler/astilectron-bundler
+	go build -o $(BIN_DIR)/astilectron-bundler $(PROJ_PATH)/astilectron-bundler
 
 install: ## make and install astilectron-bundler into ${GO_PATH}/bin.
-	go install -a github.com/asticode/go-astilectron-bundler/astilectron-bundler
+	go install -a $(PROJ_PATH)/astilectron-bundler
 
 test: ## run tests
-	go test github.com/asticode/go-astilectron-bundler/...
+	go test $(PROJ_PATH)/...
 
 fmt: ## run fmt
-	go fmt github.com/asticode/go-astilectron-bundler/...
+	go fmt $(PROJ_PATH)/...
 
 
